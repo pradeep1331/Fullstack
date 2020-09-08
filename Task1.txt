@@ -1,0 +1,194 @@
+HTTPS 1.1 vs 2
+
+* HTTP1.1 loads resource one after other  so if one resource cannot be loaded it will block other resources behind it.
+  HTTP 2 uses a single TCP connection to send multiple streams of data at once so that one resource does not block other resources.
+* Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress 
+  HTTP messages to make them smaller . HTTP/2 uses a more advanced compression method called HPACK .Using HPACK 
+  saves few bytes from every HTTP packet. As modern webpages involve a huge volume of packets for every single page
+  it adds up to loading the page faster than http 1.1.
+* Instead of waiting for the client to request for assets like JS and CSS, the server can “push” the resources it 
+  believes would be required by the client. Avoids the round trip.
+* Almost, all the browsers support HTTP/2 — Chrome, Firefox, Opera, Safari (for specific OS versions) and even IE
+
+___________________________________________________________________________________________________________
+
+https://www.youtube.com/watch?v=SmE4OwHztCc - Take away 
+
+* browser components -  Bindings  , Rendering , platform , javascript VM
+* Rendering - Parsing html , lays out page to get the web page
+* Parsing  - Can be halted  and speculative parsing
+* Tokenizer - Finds start tag and end tag and create a token for the tag
+* Parse Tree - Representation of html elements 
+* <Script> , <link> , <style> -  Will halt parser and alter the document 
+* Speculative parsing - Look ahead for things like images, style sheets
+* Performance insight - why put script tag at the end , since scirpt tag halts parsing keeping at bottom would make parsing faster compared to keeping it in middle
+* DOM to Rendering objects - Visual Output , Gemetric info , layout , styles
+* layout is Recursive process - traverses through the render tree , node position and size , layouts its children
+* Paint setup 
+
+__________________________________________________________________________________________________________
+https://www.youtube.com/watch?v=-4r0W7TtVTY - take away
+
+file creation
+
+var fs = require('fs');
+
+require() is used to create, update ,delete , rename, read files
+
+fs.writeFile("Demo.txt","this is sample file creation" ,function(err){
+
+ if(err){
+   console.log("creation failed")
+ }
+
+ console.log("demo file created")
+
+})
+Output:
+
+C:\Users\user>node D:\webpages\sample.js
+demo file created
+
+fs.readFile()
+fs.writefile()
+fs.appendFile()
+fs.unlink() - to delete
+fs.rename()
+_____________________________________________________________________
+
+fake servor :
+
+ Resources
+  http://localhost:3000/posts
+  http://localhost:3000/comments
+  http://localhost:3000/profile
+
+  Home
+  http://localhost:3000
+
+__________________________________________________________________
+host json server on heroku
+
+heroku login
+heroku create pradeep-jsonserver
+
+D:\heroku>heroku create pradeep-jsonserver
+Creating ⬢ pradeep-jsonserver... done
+https://pradeep-jsonserver.herokuapp.com/ | https://git.heroku.com/pradeep-jsonserver.git
+
+D:\heroku>heroku git:remote -a pradeep-jsonserver
+set git remote heroku to https://git.heroku.com/pradeep-jsonserver.git
+
+D:\heroku>git remote -v
+heroku  https://git.heroku.com/pradeep-jsonserver.git (fetch)
+heroku  https://git.heroku.com/pradeep-jsonserver.git (push)
+
+D:\heroku\json-server-heroku>git remote -v
+heroku  https://git.heroku.com/pradeep-jsonserver.git (fetch)
+heroku  https://git.heroku.com/pradeep-jsonserver.git (push)
+origin  https://github.com/pradeep1331/heroku.git (fetch)
+origin  https://github.com/pradeep1331/heroku.git (push)
+
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://pradeep-jsonserver.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/pradeep-jsonserver.git
+ * [new branch]      master -> master
+
+https://pradeep-jsonserver.herokuapp.com/ launched successfull
+
+__________________________________________________________________________
+
+HTML Cheat sheet:
+
+<head></head> - tag in HTML is used to define the head portion of the document which contains information related to the document such as meta , style , title etc
+
+<title></title> - used inside head tag to define title of the document
+
+<body></body> - Defines the documents body and contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+
+ <a href="https://sample.com">sample site</a> - anchor tag allows to link one page to another
+
+<h1-6></h1-6> - heading tag used to define heading
+
+<p></p> - used to define paragraph which starts on a new line
+
+<script></script> - contains script statements or points to external script file
+
+<img> - to link a image to a html page
+
+<form>form content</form> - used to create a form for user input
+
+<br> - inserts a line break
+
+<!-- --> - to insert comments
+
+<b> - to make text bold
+
+<iframe> - to define a inline frame
+
+<ul></ul> - to define an unordered list
+
+<ol></ol> - to define an ordered list
+
+<li></li> - to define an item in a list
+
+<i></i> - to display contents inside as italic format
+
+<b></b> - to display contents inside in bold
+
+<u></u> - to display contents inside with underline
+
+
+______________________________________________________________
+
+Type of :
+
+console.log(typeof(1))      - number
+console.log(typeof(1.1))    - number
+console.log(typeof("1.1"))  - String
+console.log(typeof(true))   - Boolean
+console.log(typeof(null))   - object
+console.log(typeof(undefined)) - undefined
+console.log(typeof([]))    - object
+console.log(typeof({}))    - object
+____________________________________________________________________
+
+Internal Representation of objects in javascript:
+
+Javascript has primitive data types such as Number,String , Boolean ,undefines and objects.
+
+Obejcts are complex than primitive data types as each object can have combination of primitive data types.
+
+Objects are reference data types. Meaning values are assigned as reference or pointer to the value.
+
+Reference meaning location to the memory where the object is stored . The variables do not actually hold the values.
+
+You can access properties using two different kinds of expressions . 
+1. Obj.prop
+2. obj["prop"]
+
+Object keys are always strings. Even if we use a key which is not string it is converted to a string.
+eg. let a = { 1: a, 2: b };
+here keys 1 and 2 are numbers but will be converted to string
+
+objects in javascript are mutable. Since objects point to a location , they can be changed.
+
+When objects are referring to one object, a change in one object’s properties is reflected in all the other objects.
+
+________________________________________________________________________
+
+List 5 difference between Browser JS(console) v Nodejs
+
+* js does not allow file operations.eg read ,update,write. Node JS allows file operations.
+* js console use browser engines in the browser like Spidermonkey in firefox and v8 in chrome. Node js is v8 engine with additional libraries
+* js is for client side scripting but Node js allows server side scripting
+* js is ony browser specific but node js can run outside for browsers in any any operating system
+* js can add html element node js does have the ability to add html elements
+ 
+
+
+ 
+ 
