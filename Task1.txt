@@ -188,6 +188,68 @@ List 5 difference between Browser JS(console) v Nodejs
 * js is ony browser specific but node js can run outside for browsers in any any operating system
 * js can add html element node js does have the ability to add html elements
  
+________________________________________________________________________
+
+Resume with html tags:
+
+<!DOCTYPE html>
+<head>
+</head>
+<body style="background-color:lightblue;>
+  <h1 style="color:black ; font-size: 40px; font-style:italic">Resume</h1>
+  <h2 style="color:black ; font-size: 30px; font-style:italic">pradeep</h2>
+  <img src="pradeep.jpg" alt="something is wrong" width="150px" height="150px">
+  <br>
+  <p> 
+  <p id="skill"><b><u>Skills</u><b></p>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+  <p id="education"><b><u>Education</u></b></p>
+  <table>
+      <thead>
+      <tr>
+      <th>S.NO</th>
+      <th>Institution</th>
+      <th>percentage</th>
+      </tr>
+      </thead>
+      <tr>
+      <td>1</td>
+      <td>B.E Mechanical</td>
+      <td>70%</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>Higher secondary</td>
+      <td>90%</td>
+      </table>
+      <br>
+
+  <p id="exp"><b><u>Experience</u></p>
+ <table>
+      <thead>
+      <tr>
+      <th>S.NO</th>
+      <th>Organisation</th>
+      <th>Exp</th>
+      </tr>
+      </thead>
+      <tr>
+      <td>1</td>
+      <td>CTS</td>
+      <td>2.3 yrs</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>capgemini</td>
+      <td>2 yrs</td>
+      </table>
+
+</body>
+
 
 
  
