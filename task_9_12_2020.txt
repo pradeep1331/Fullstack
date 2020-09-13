@@ -60,7 +60,27 @@ var url_string2 = proxy + "https://api.domainsdb.info/v1/domains/search?domain=f
 fetch(url_string2)
 .then(res=>res.json())
 .then(data=>console.log(data))
+___________________________________________________________________________________________
 
+With API Key:
+
+var request = new XMLHttpRequest()
+
+request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=58e4c55f0ca3c0fab8255d5ae3b38a15', true)
+request.send()
+
+request.onload = function() {
+  // Begin accessing JSON data here
+var data = JSON.parse(this.response)
+console.log(data)
+
+for(let i = 0 ;i <data.length;i++){
+
+console.log(data[i].name);
+
+}
+
+}
 ______________________________________________________________________________________________
 
 Errors:
