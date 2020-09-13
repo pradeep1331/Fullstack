@@ -1,0 +1,136 @@
+________________________________________________________________________________________
+
+
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true)
+request.send()
+
+request.onload = function() {
+  // Begin accessing JSON data here
+var data = JSON.parse(this.response)
+console.log(data)
+
+for(let i = 0 ;i <data.length;i++){
+
+console.log(data[i].name);
+
+}
+
+}
+
+____________________________________________________________________________________________
+
+
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://dog.ceo/api/breeds/list/all', true)
+request.send()
+
+request.onload = function() {
+  // Begin accessing JSON data here
+var data = JSON.parse(this.response)
+console.log(data)
+
+for(let i = 0 ;i <data.length;i++){
+
+console.log(data);
+
+}
+
+}
+______________________________________________________________________________________________
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://cors-anywhere.herokuapp.com/https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com', true)
+request.send()
+
+request.onload = function() {
+  // Begin accessing JSON data here
+var data = JSON.parse(this.response)
+console.log(data)
+
+
+}
+
+____________________________________________________________________________________________
+
+var proxy = "https://cors-anywhere.herokuapp.com/";
+var url_string2 = proxy + "https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com";
+fetch(url_string2)
+.then(res=>res.json())
+.then(data=>console.log(data))
+
+______________________________________________________________________________________________
+
+Errors:
+Error:
+TypeError: Cannot read property 'not' of undefined
+
+ 
+ 
+function myFunc(var1) {
+ 
+  return var1.name;
+}
+var testVar;  //initialize here
+
+try {
+ console.log(myFunc(testVar));
+}
+catch(TypeError) {
+  console.log("varable not defined");
+}
+
+Result:
+C:\Users\user>node "D:\jsfiles\sample.js"
+varable not defined
+
+Error:
+TypeError: ‘undefined’ is not an object (evaluating
+
+Occurs in Safari broswer only.occurs when we call method of an undefined object.
+
+ var test  = undefined;
+
+ if(test.length[1]===0){
+
+ 	console.log("undefined")
+ }
+
+Error:
+TypeError: null is not an object (evaluating
+
+Occurs in Safari broswer only.occurs when we call method of an null object.
+
+ var test  = null;
+
+ if(test.length[1]===0){
+
+ 	console.log("undefined")
+ }
+
+Error:
+Script Error:
+"Script Error" happens in violation of the cross-origin policy. 
+______________________________________________________________________________________________
+
+window.document - represents the browser's window. All global JavaScript objects, functions, and variables are members of the window object.
+
+Window.localStorage - The localStorage object stores data with no expiration date. The data will not be deleted when the browser is closed.
+
+window.location  - can be used to get the current page details 
+
+eg:
+window.location.href returns the href (URL) of the current page
+
+window.name -  returns the name of the current window.  
+
+window.session storage - sessionStorage properties allow to save key/value pairs in a web browser.The sessionStorage object stores data for only one session
+
+________________________________________________________________________________________________
+
+
+
+
+
