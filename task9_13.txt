@@ -1,0 +1,166 @@
+//Print odd numbers in an array 
+
+ var oddnums;
+(function(arguments){
+
+ oddnums = arguments.filter((num) =>{
+
+   return !(num %2 ==0);
+
+ })
+
+
+})([1,2,3,4,5,6,27.5])
+
+console.log(oddnums)
+
+result:
+C:\Users\user>node "D:\jsfiles\tryouts.js"
+[ 1, 3, 5, 27.5 ]
+
+______________________________________________________
+//To convert array to caps
+
+var upcase;
+
+(function(arguments){
+
+
+  upcase = arguments.map((str) => {
+
+    return str.toUpperCase();
+
+
+  })
+
+})(["Tom","Jerry","Tyke"])
+
+console.log(upcase)
+
+Result:
+C:\Users\user>node "D:\jsfiles\tryouts.js"
+[ 'TOM', 'JERRY', 'TYKE' ]
+_______________________________________________________
+//Return all the prime numbers in an array
+
+var prnum = [] ;
+
+(function(arguments){ 
+
+       flag = true;
+            
+       arguments.forEach((num)=>{
+        
+        if(!(num%2==0)){
+          prnum.push(num);
+        }  
+
+       })
+
+        }) ([5,6,7])
+
+
+console.log(prnum)
+
+C:\Users\user>node "D:\jsfiles\func.js"
+[ 5, 7 ]
+_______________________________________________________
+//Return all the palindromes in an array
+
+
+var pal = [] ;
+
+(function(arguments){ 
+
+       flag = true;
+            
+       arguments.forEach((str)=>{
+        
+        let revnum = str.split('').reverse().join('');
+
+        if(str === revnum){
+
+        	pal.push(revnum)
+        }
+
+
+
+      })
+
+       console.log(pal)
+
+       return pal;
+
+        }) (["1331","1345","324234"])
+
+
+Result:
+C:\Users\user>node "D:\jsfiles\func.js"
+[ '1331' ]
+______________________________________________________________
+
+//Sum of all numbers in an array
+
+
+var sum ;
+
+(function(arguments){ 
+
+
+    
+     sum = arguments.reduce((sum,num) =>{
+
+     return  num + sum;
+
+     },0) 
+            
+      
+
+        }) ([5,6,7])
+
+
+console.log(sum)
+
+
+C:\Users\user>node "D:\jsfiles\tryouts.js"
+18
+_________________________________________________________
+//find duplicates from an array
+
+var pal = [] ;
+
+var unique= [];
+
+(function(arguments){ 
+   
+ 
+  for(var i = 0 ; i <arguments.length;i++){
+    
+    for (var j = 0 ; j<arguments.length;j++){
+    
+    if(i === j){
+     continue;
+    }
+    
+    if (arguments[i] === arguments[j]){
+      break;
+    
+  }    
+  
+    }
+  
+     if( j === arguments.length){
+           unique.push(arguments[i]);
+  }
+ 
+
+
+
+}
+console.log(unique)
+
+        }) (["hello","hi","hello","world"])
+
+Result:
+C:\Users\user>node "D:\jsfiles\func.js"
+[ 'hi', 'world' ]
