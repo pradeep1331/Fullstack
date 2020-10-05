@@ -1,0 +1,177 @@
+.header{
+    position: relative;
+    background-color: gray;
+}
+.header_pic{
+    display: flex;
+    justify-content: center;
+
+
+}
+.photo{
+    position: relative;
+    border-radius: 50%;
+    top: 110px;
+    
+}
+.name{
+    position: relative;
+   /* margin-left: 50px; */ 
+   /* border: 2px solid black;
+  outline: #4CAF50 solid 10px; */
+  border-radius: 10px;
+  background-color: orange;
+  margin: auto;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  top: 60px;
+  font-size: 40px;
+}
+.colour{
+  background-color: lightgray;
+  height: 30px;
+}
+.colour1{
+    background-color: gray;
+    height: 40px;
+}
+.details > p{
+    /* text-align: center; */
+    margin-left: 30%;    
+}
+
+.photo{
+    border: 5px dotted #fabe28;
+}
+.profile{
+    display: flex;
+    align-items: baseline;
+}
+.profile > h2{
+   margin-left: 10px;
+}
+
+  .profile-icon {
+    width:50px;
+    height:50px;
+    margin: 5px 5px;
+    background-color:#fabe28;
+    border-radius:100%;
+    line-height:50px;
+    text-align:center;
+    vertical-align:middle;
+    border: 4px dotted black;
+    
+}
+.profile-text{
+    text-align:justify;
+    line-height: 1.6;
+}
+
+.profile-text1{
+    text-align:justify;
+    line-height: 1.6;
+}
+
+.profile-text > h3{
+    margin-left: 10px;
+    word-spacing: 380px;
+}
+
+.profile-text1 > h3{
+    margin-left: 10px;
+    word-spacing: 250px;
+}
+.profile-text > p{
+    margin-left: 10px;
+}
+
+.profile-text1 > p{
+    margin-left: 10px;
+}
+
+/* myskills */
+#skills > h4{
+    margin-left: 250px;
+}
+.myskills{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.myskills h2{
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-size: 40px;
+}
+.myskills h3{
+    color: black;
+}
+.skillitem{
+    display: flex;
+    justify-content: baseline;
+}
+.programming{
+    margin-left: 5%;
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.additional{
+    margin-left: 5%;
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.bar{
+    background: white;
+    display: block;
+    height: 12px;
+    border: solid #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bar span{
+    height: 20px;
+    float: left;
+    background: #fabe28;
+}
+.html{width:80%; animation: html 3s;}
+.css{width:80%; animation: css 3s;}
+.js{width:90%; animation: js 3s;}
+.java{width:80%; animation: html 3s;}
+.bootstrap{width:80%; animation: html 3s;}
+.nodejs{width:60%; animation: html 3s;}
+.sql{width:90%; animation: sql 3s;}
+@keyframes html{
+    0%{width: 0%}
+    100%{widows: 80%;}
+}
+@keyframes css{
+    0%{width: 0%}
+    100%{widows: 80%;}
+}
+@keyframes js{
+    0%{width: 0%}
+    100%{widows: 90%;}
+}
+@keyframes java{
+    0%{width: 0%}
+    100%{widows: 80%;}
+}
+@keyframes bootstrap{
+    0%{width: 0%}
+    100%{widows: 80%;}
+}
+@keyframes nodejs{
+    0%{width: 0%}
+    100%{widows: 60%;}
+}
+@keyframes sql{
+    0%{width: 0%}
+    100%{widows: 90%;}
+}
