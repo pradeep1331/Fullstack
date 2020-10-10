@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+       .formnames {
+         
+             border-collapse: collapse;
+             padding-right: 45px;       
+
+}
+
+.formelements{
+
+  padding-left: 5%;
+}
+.table { width: 100%; 
+       
+ }
+
+   
+.fa{
+     
+    padding:0%;
+  }
+
+    </style>
+    
+    </head>
+<body>
+  <form id="login-form" method="GET" action="/">
+
+    <div class="container" style="margin-left:30%;height: 70%;width: max-content;background-color: gray;position: absolute">
+      
+        <table style="width:100%">
+            <tbody>
+                
+                    <tr>
+                        <td class ="formnames" ><h4>FULL NAME</h4></td>
+                        <td class = "formelements"  align="right"><span><i class="fa fa-user-circle"></i> <input type="text" placeholder="name" size="27" id="name"/>
+                        </span></td>
+                      </tr>   
+                      <tr>
+                      <td class ="formnames"><h4>Address Line</Address></h4></td>
+                        <td class = "formelements"  align="right"><span><i class="fa fa-address-book"></i><input type="text" placeholder="address line" size="27"id="address1"/>
+                        </span></td>                                               
+                        
+                      </tr>    
+                      
+                      <tr>
+                        <td class ="formnames"><h4>Address Line2</Address></h4></td>
+                          <td class = "formelements"  align="right"><span><i class="fa fa-address-book"></i> <input type="text" placeholder="address line2" size="27" id="address2"/>
+                          </span></td>                                               
+                        </tr>  
+                
+                        <tr>
+                            <td class ="formnames"><h4>City</Address></h4></td>
+                              <td class = "formelements"   align="right"><span><i class="fa fa-map-marker"></i> <input type="text" placeholder="City" size="27" id="City"/>
+                              </span></td>                                               
+                            </tr>  
+
+                            <tr>
+                                <td class ="formnames"><h4>Province</Address></h4></td>
+                                  <td class = "formelements"  align="right"><span><i class="fa fa-map-marker"></i> <input type="text" placeholder="Province/Region" size="27" id="Province"/>
+                                  </span></td>                                               
+                                </tr>  
+
+                                <tr>
+                                    <td class ="formnames"><h4>Country</Address></h4></td>
+                                      <td class = "formelements"  align="right"><i class="fa fa-map-marker"></i> <input type="text" placeholder="Country" size="27" id="country"/>
+                                      </td>                                               
+                                    </tr>  
+                                    <tr>
+                                        <td class ="formnames"><h4>State</Address></h4></td>
+                                          <td class = "formelements"  align="right"><i class="fa fa-flag-o"></i> <select name="updateaddrState" size="auto" id="state" class="required">
+                                            <option value="1"> Andaman & Nicobar Islands</option>
+                                            <option value="2"> Tamil Nadu</option>
+                                            <option value="3"> Telangana</option>
+                                            <option value="4"> Tripura</option>
+                                            <option value="5"> Uttar Pradesh</option>
+                                            <option value="6"> Uttaranchal</option>
+                                            <option value="7"> West Bengal</option>
+                                            <option value="8"> Ladakh</option>
+                                            <option value="9"> Outside India </option>
+                                        </select>
+                                          </span></td>                                               
+                                        </tr>  
+
+                  
+            </tbody>
+
+        </table>
+        <div style="margin-left:50%;" ></di><input type="submit" value="submit" id="submit"></div>
+
+    </div>
+
+  
+  </form>
+
+  <script src="form.js"></script>
+    
+</body>
+</html>
+
