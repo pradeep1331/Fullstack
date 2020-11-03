@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container bg-dark">
+    
+    <div class="row">
+        <div class="col-lg-4 col-sm-12">
+
+           <div class="card">
+               <div class="card-header bg-dark">INDIA</div>
+                   <div class="card-body">
+                    <img class="card-img" src="INDIA.PNG" alt="Card image"><br><br>
+                    <p class="card-text">Capital : DELHI</p>
+                    <p class="card-text">Region  : ASIA</p>
+                    <p class="card-text IND">Country code  : IND</p><br>
+                    <button class="getweather" id="indWeather">Click for weather</button>
+                </div>                 
+
+
+           </div>
+
+
+        </div>
+        <div class="col-lg-4 col-sm-12"> 
+
+            <div class="card">
+                <div class="card-header bg-dark">BHUTAN</div>
+                    <div class="card-body">
+                     <img class="card-img" src="BHUTAN.PNG" alt="Card image"><br><br>
+                     <p class="card-text">Capital : Thimphu</p>
+                     <p class="card-text">Region  : ASIA</p>
+                     <p class="card-text BH" >Country code  : BH</p><br>
+                     <button class="getweather" id="BHWeather" onclick="getWeather()">Click for weather</button>
+
+                 </div>                 
+ 
+ 
+            </div>
+ 
+ 
+         </div>
+         <div class="col-lg-4 col-sm-12">
+
+            <div class="card">
+                <div class="card-header bg-dark">JAPAN</div>
+                    <div class="card-body">
+                     <img class="card-img" src="JAPAN.PNG" alt="Card image"><br><br>
+                     <p class="card-text">Capital : TOKYO</p>
+                     <p class="card-text">Region  : ASIA</p>
+                     <p class="card-text JP">Country code  : JP</p><br>
+                     <button class="getweather" id="jpWeather" onclick="getWeather()">Click for weather</button>
+                 </div>                 
+ 
+ 
+            </div>
+ 
+ 
+         </div>
+        
+       
+     
+
+</div>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>

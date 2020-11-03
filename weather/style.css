@@ -1,0 +1,25 @@
+.card-text{
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.card-body{
+
+    background-image: linear-gradient(to right, rgb(247, 224, 224) , rgb(14, 11, 11));
+}
+.card{
+    margin: 15px ;
+}
+.card-header{
+
+    color: whitesmoke;
+    text-align: center;
+}
+.getweather{
+    text-align: center;
+    margin-left: 25%;
+    background-color: transparent;
+    border: 1px solid whitesmoke; 
+    color: whitesmoke;
+}
