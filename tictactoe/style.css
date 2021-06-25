@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+
+    justify-content: center;
+    display: flex;
+}
+
+#container{
+  
+    background-color: aqua;
+    
+    border-radius: 15px;
+    margin-top: 50px;
+       
+}
+
+#heading{
+
+    text-align: center;
+
+}
+
+.game-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr) ;
+    grid-gap: 10px;
+}
+
+.cell{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+    cursor:crosshair;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+.x::before{
+    content: "X";
+    font-size: 90px;
+      
+}
+
+.o::before{
+    display: flex;
+
+    content: "O";
+    font-size: 90px;
+       
+}
+
+.winner{
+    display: flex;
+    justify-content: center;
+}
+
+
+.winner.x::before{
+    content: "X is Winner";
+    font-size: 70px;
+}
+
+.winner.o::before{
+    content: "O is Winner";
+    font-size: 70px;
+}
+
+.N::before{
+    content: "No one won";
+    font-size: 70px;
+}
+
+
+
+
