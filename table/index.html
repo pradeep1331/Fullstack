@@ -1,0 +1,72 @@
+<!Doctype html>
+<html>
+<head>
+<title>task1</title>
+
+<style>
+ #leftbox {
+                float:left;
+                background:Tomato;
+                width:49.9%;
+                height:600px;
+padding:0px;
+            }
+
+
+ #rightbox {
+                float:right;
+                background:DodgerBlue;
+                width:49.9%;
+                height:600px;
+            }
+
+table{
+border: 1px solid black;padding:5px;border-spacing:5px;width:100%;
+}
+th,td,tr{
+border:1px solid black;text-align:center;
+}
+
+</style>
+
+</head>
+<body>
+<div id="leftbox">
+<br>
+<br>
+<span style="padding-right:5px;">Name</span><input id="namebox" type ="text" style="border-radius:3px" value=""></input>
+<br>
+<br>
+<span style="padding-right:5px;padding-right:14px">Age</span><input id="agebox" type ="text" style="border-radius:3px;" value=""></input>
+<br>
+<br>
+<span style="padding-right:5px;">Email</span><input id="emailbxox" type ="text" style="border-radius:3px;" value=""></input>
+<br>
+<br>
+<button onclick="updatetable()" style="border-radius:3px" id="submit">Submit</button>
+
+<button onclick="updatevalues()" style="border-radius:3px" disabled ="true" id="updatebutton">Update</button>
+
+</div>
+<div id="rightbox">
+<table >
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody id="tablebody">
+<tr id="tablerow">
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
