@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+}
+
+#subcontainer1{
+    width: 20%;
+    background-color:lightgray;
+    margin-right: 2%;
+}
+
+#subcontainer2{
+
+    width:78%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#listofchapters{
+    list-style-type: none;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 2;  
+    overflow: scroll;
+    padding-left: 0;
+    
+}
+
+.subchap{
+
+    padding-left: 0;
+    text-align: left;
+}
+.subchap:hover{
+
+    background-color: lime;
+}
+
+#cssheading{
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.253);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.253);
+    padding: 10px;
+    
+}
+
+#chapters{
+
+    background-color: rgba(128, 128, 128, 0.308);
+    border: 1px solid black;
+}
+
+.chaps{
+    color: crimson;
+}
+
+#cssheading1{
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.253);
+    padding-top: 30px;
+    
+}
+
+#cssbk{
+    background-color: rgba(128, 128, 128, 0.308);
+    border-radius: 5px;
+}
+
+#text{
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 1.5;
+    padding: 0.5 px;
+    border-left: 10px limegreen;
+}
