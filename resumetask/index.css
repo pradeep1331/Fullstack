@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+#container1{
+    height: 250px;
+}
+#addr{
+
+    text-align: center; 
+
+    }
+
+
+#color1{
+    background-color: grey;
+    height: 230px ;
+}
+
+#color2{
+    background-color: lightgray;
+    height: 20px;
+    position: relative;
+    bottom: 60px;
+}
+
+#details{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container2{
+
+    display: flex;
+}
+
+#subcontainer1{
+
+    width: 48%;
+}
+
+#subcontainer2{
+    
+    border: 1px solid;
+    height: auto;
+    margin: 2%;
+}
+
+
+#subcontainer3{
+    width:48% ;
+}
+
+#vertical{
+    border-radius: 1px;
+}
+
+.icon{
+
+    color: black;
+    border-radius: 40px;
+    border-color: orange;
+    border: dotted;
+    background-color: grey;
+    align-self: center;
+    padding: 8px;
+    
+}
+
+.iconheadings{
+
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.profiletext{
+    margin: 0;
+    padding-top: 0;
+    padding-right: 30px; 
+    text-align: justify;
+
+  
+
+}
+
+.TechnicalsKills{
+    text-align: center
+
+}
+
+.techskill{
+
+   margin-left:350px;
+   align-content:center;
+   
+}
+
+#Resumename{
+    background-color: orange ;
+   width:200px;
+   height: 40px;
+
+   border-radius: 20px;
+   text-align: center;
+   margin-left: 40%;
+   position: relative;
+   bottom: 90px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bolder; 
+   font-size:  x-large;
+
+}
