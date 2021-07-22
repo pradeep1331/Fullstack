@@ -1,0 +1,153 @@
+//Print Odd numbers in an array
+
+let arr1= [1,2,3,4,5,6,7,8]
+let oddnums = (arr) =>{
+ let oddnum = []
+  for(let i in arr){
+    if(! (arr[i]%2 == 0)){
+      oddnum.push(arr[i])
+    }
+  }
+ console.log(oddnum)
+}
+oddnums(arr1);
+Output : 1 3 5 7
+
+
+--------------------------------------------------------------------------------------
+
+//Convert all strings to title caps in string array
+let arr1 = ["how" , "are" , "you"]
+let titlecaps = (arr) =>{
+  for(let i in arr){
+     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+  }
+  console.log(arr1);
+}
+titlecaps(arr1);
+Output: ["How", "Are", "You"]
+--------------------------------------------------------------------------------------
+
+//Sum of all numbers in an array
+
+let arr1 = [1,2,4,5,6,7]
+let sum = (arr) =>{
+  let sum1 = arr.reduce((accumalator,currentvalue) =>{
+    return accumalator + currentvalue;
+  },0);
+  console.log(sum1);
+}
+sum(arr1);
+Output : 25
+--------------------------------------------------------------------------------------
+//Return all prime numbers in a array
+let arr1 = [2,3,5,6,8,9,11,13,15,17]
+ let primenum = (arr) =>{
+  let list = []
+      function isprime(n){
+        if(n===2){
+          return true;
+        }
+      if(n<2 || (n%2==0) ){
+        return false;
+      }
+      for( let i=3;i<n;i++){
+        if(n%3 == 0){
+          return false
+        }      
+      }
+    //  console.log(n);
+      return true;   
+     }
+      for(let i in arr ){
+        if(isprime(arr[i])){
+          list.push(arr[i])
+        }       
+      }
+   console.log(...list)
+return list;
+ }
+
+ primenum(arr1);
+Output  : 2 3 5 11 13 17
+--------------------------------------------------------------------------------------
+
+//return palindromes in an array
+let arr1 = [123,131,234,567,1331,656,731]
+let palin = (arr) => {
+    let list = []
+  function ispalin(n){       
+    let revnum = n.toString().split("").reverse().join("");
+    if(n == revnum){
+     return true;
+    }else{
+      false;
+    }
+  }
+  for(let i in arr1){
+    if(ispalin(arr[i])){
+      list.push(arr[i])
+    }
+  }
+  console.log(list)
+  return list;
+}
+palin(arr1);
+Output : [131, 1331, 656]
+--------------------------------------------------------------------------------------
+
+// median of two sorted arrays of same size
+
+let arr1 = [1,2,11,4,5,8,15]
+let arr2 = [5,8,8,9,10,6,29]
+let median = (array1,array2) =>{
+  let mediannum = Number;
+  let combinedArray = [...array1,...array2].sort((a,b) => (a-b));  
+  // console.log(combinedArray);
+  let mp =  combinedArray.length/2;
+  mediannum = (combinedArray[mp]+combinedArray[mp-1])/2;
+  console.log(mediannum)
+  return mediannum;
+}
+
+median(arr1,arr2);
+Output : 8
+
+--------------------------------------------------------------------------------------
+//remove dulplicates from an array
+let arr1 = [1,3,3,4,5,6,7,8,9,9,11,11,1,1,1,1,]
+
+let removeDup = (arr) => {
+   let uniqArr = []
+   for(var i in arr){
+    if(!uniqArr.includes(arr[i])){
+      uniqArr.push(arr[i])
+    }
+   }
+   console.log(uniqArr)
+   return uniqArr;
+}
+
+removeDup(arr1);
+Output :  [1, 3, 4, 5, 6, 7, 8, 9, 11]
+
+--------------------------------------------------------------------------------------
+//Rotate array and return rotated array
+
+ let arr1 = [2,3,4,5,6,7,8,9,10,11,21]
+ let rotatearr = (k,arr) =>{
+  let arr2 = arr;
+  for(let i=0;i<k;i++){
+    let temp = arr2[arr2.length-1];
+     let slicedarr = arr2.slice(0,arr2.length-1);
+         slicedarr.splice(0,0,temp);
+     temp = "";
+
+     arr2 = slicedarr;       
+  }
+  console.log(arr2);
+
+  return arr2;
+ }
+ rotatearr(3,arr1);
+ Output: [10, 11, 21, 2, 3, 4, 5, 6, 7, 8, 9]
