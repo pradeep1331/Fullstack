@@ -1,0 +1,53 @@
+.container{
+    margin: 0px 50px 0 50px;
+    background-color: blanchedalmond;
+    height: 100vh;
+    border: 1px solid black;
+}
+#header{
+    text-align: center;
+    text-decoration:black underline;
+
+}
+h4{
+    display: inline-block;
+    margin: 0;
+    
+}
+
+
+label{
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+    line-height: 2;
+    
+  }
+
+  label::after{
+      content: ":";
+  }
+
+  #addr{
+      width:200px;
+      height:40px;
+  }
+
+  #idly{
+      padding-left: 20px;
+  }
+
+  #detailtable{
+      width: 100%;
+  }
+
+  table, th, td,tr{
+
+      border: 1px solid black;
+  }
+
+  #submitButton{
+
+    margin-left: 142px ;
+  }
+

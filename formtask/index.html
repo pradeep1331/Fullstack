@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+      
+ <div class="container">
+        <div class="mainForm">
+            <h2 id="header">Personal Details Form</h2>
+             <form onsubmit="return false;">
+                 <label for="fname"><strong>First Name</strong></label>
+                 <input type="text" id="fname">
+                 <br>
+                 <label for="lname"><strong>Last Name</strong></label>
+                 <input type="text" id="lname">
+                 <br>
+                 <label for="addr"><strong>Address</strong></label>
+                 <input type="text" id="addr">
+                 <br>
+                 <label for="pincode"><strong>Pincode</strong></label>
+                 <input type="text" id="pincode">
+                 <br>
+                 <label for="gender"><strong>Gender</strong></label>
+                 <h4>Male</h4>
+                 <input type="radio" id="male" name="gender" class="gender" value="male">
+                 <h4>Female</h4>
+                 <input type="radio" id="female" name="gender" class="gender" value="female"> 
+                 <br>
+                 <label><strong>Food</strong></label>
+                 <h4 for="idly">idly</h4>
+                 <input type="radio" id="idly" class="food" value="idly">
+                 <h4 for="dosa">dosa</h4>
+                 <input type="radio" id="dosa" class="food" value="dosa">
+                 <h4 for="chapathi">chapathi</h4>
+                 <input type="radio" id="chapathi" class="food" value="chapathi">
+                 <h4 for="parota">parota</h4>
+                 <input type="radio" id="parota" class="food" value="parota">
+                 <h4 for="icecream">icecream</h4>
+                 <input type="radio" id="icecream" class="food" value="icecream">
+                  <br>
+
+                 <label for="state"><strong>State</strong></label>
+                 <select id="state">
+                       <option value="TN">Tamil Nadu</option>
+                       <option value="KL">Kerala</option>
+                       <option value="KN">Karnataka</option>
+                       <option value="TL">Telangana</option>
+                       <option value="AP">Andhra Pradesh</option>
+
+                 </select>
+                 <br>
+
+                 <label for="country"><strong>Country</strong></label>
+                 <select id="country">
+                       <option value="IND">India</option>
+                       <option value="US">US</option>
+                       <option value="Canada">Canada</option>
+                 </select>
+                 <br>
+
+              <input type="submit" id="submitButton" onclick="adddetail()">
+
+             </form>
+             <br><br><br>
+        </div>
+
+        <div class="table">
+           <table id="detailtable">
+               <thead>
+                   <tr>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Address</th>
+                       <th>Pincode</th>
+                       <th>Gender</th>
+                       <th>Food</th>
+                       <th>State</th>
+                       <th>Country</th>
+                   </tr>
+
+               </thead>
+               <tbody id="tableBody">
+
+               </tbody> 
+
+           </table>
+
+        </div>
+
+ </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
