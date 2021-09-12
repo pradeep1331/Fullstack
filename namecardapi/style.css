@@ -1,0 +1,36 @@
+
+#container{
+   display: flex;
+    width: 400px;
+    height: 100px;
+    
+    background-image: linear-gradient(to right,blanchedalmond,white);
+}
+
+#subcontainer1{
+    width: 150px;
+    
+}
+
+#subcontainer2{
+    
+    width: 250px;
+    margin: 0;
+    margin-left: 10px;
+    border: 2px solid black;;
+
+    
+}
+
+img {
+    border-radius: 50%;
+  }
+
+  #btn1{
+      margin-left: 40px;
+      margin-top: 10px;
+  }
+
+  body{
+      background-color: blanchedalmond;
+  }
