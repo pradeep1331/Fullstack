@@ -1,0 +1,35 @@
+#container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+#heading{
+
+  text-align: center;
+}
+
+p{
+    text-align: center;
+    overflow: hidden;
+     
+
+}
+p::before{
+    content: "Title: ";
+    font-weight: bolder; 
+    text-decoration: underline;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+body{
+    background-color: blanchedalmond;
+}
