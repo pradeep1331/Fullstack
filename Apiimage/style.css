@@ -9,12 +9,13 @@
 #heading{
 
   text-align: center;
+  font-family: cursive;
 }
 
 p{
     text-align: center;
     overflow: hidden;
-     
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 p::before{
