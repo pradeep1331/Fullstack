@@ -1,0 +1,53 @@
+#container{
+    width: 980px;
+    height: 80vh;
+    margin:5vh auto 0 auto;
+}
+body{
+    background-image: linear-gradient(to right, rgba(88, 137, 209, 0.842),rgba(223, 106, 85, 0.726));
+
+}
+
+#heading{
+    transform: translate(0, -200px);
+    font-size: 50px;
+    color: transparent;
+    animation: heading 2s infinite alternate;
+}
+
+@keyframes heading{
+0%{opacity: 1;}
+100%{opacity: 0;}
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+
+}
+
+span{
+    font-size: 32px;
+}
+
+#alias{
+    color: coral;
+    font-size: 20px;
+}
+
+
+
+    #heading {
+        color: #fff;
+        text-shadow:
+          0 0 7px #fff,
+          0 0 10px #fff,
+          0 0 21px #fff,
+          0 0 42px #0fa,
+          0 0 82px #0fa,
+          0 0 92px #0fa,
+          0 0 102px #0fa,
+          0 0 151px #0fa;
+      }
+  
+  
