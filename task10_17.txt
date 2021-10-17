@@ -6,7 +6,7 @@ console.log(scores.map(getnames));
 ---
 
 Question 2 : >=40 pass.. find those student that passed 
-let getPassnames =  ({name,marks})=> marks >40;
+let getPassnames =  ({name,marks})=> marks >=40;
 
 console.log(scores.filter(getPassnames));
 
@@ -14,9 +14,10 @@ console.log(scores.filter(getPassnames));
 
 Question 3 : Find all the names who failed the exams (Array methods)
 
+
 let getFailnames = ({name,marks})=> marks <40;
 
-console.log(scores.filter(getFailnames));
+console.log(scores.filter(getFailnames).map(({name})=>name));
 
 -------------------------------------
 
@@ -31,3 +32,6 @@ Find the topper's name
 let getmarks = ({marks})=> marks ;
 let highestScore = (scores.map(getmarks).sort((a,b)=>b-a))[0];
 console.log((scores.filter(({marks,name})=> marks>=highestScore))[0]["name"]);
+
+-----------------------------------------------------------------
+
