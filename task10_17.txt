@@ -31,7 +31,15 @@ Question 5 :
 Find the topper's name
 let getmarks = ({marks})=> marks ;
 let highestScore = (scores.map(getmarks).sort((a,b)=>b-a))[0];
-console.log((scores.filter(({marks,name})=> marks>=highestScore))[0]["name"]);
+console.log((scores.filter(({marks,name})=> marks>=highestScore))[0]["name"]);	
 
 -----------------------------------------------------------------
 
+const without = (arr,...removeElements) => {
+
+  return arr.filter(num => !removeElements.includes(num) )
+}
+
+console.log(without([1,2,3,4,5] ,1,2,3));
+
+-------------------------------------------------------------
