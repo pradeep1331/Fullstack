@@ -1,0 +1,120 @@
+.navctnr{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 15vh;
+}
+
+.name{
+    color: white;
+    margin-left: 20vh;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navctnr{
+    background-color: #1ABC9C;
+}
+
+.list{
+    margin-right: 10vh;
+}
+
+.about-me{
+    display: flex;
+    height:  60vh;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffdfd;
+}
+
+.skill-list{
+    list-style-type: none ;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.skill-icon{
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    text-align: center;
+    object-fit: cover;
+}
+
+.about-me-para{
+   text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+
+.skill-pic{
+    text-align: center;
+    font-weight: bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.abt-pic{
+    width: 10vh;
+    height: 10vh;
+
+}
+
+.exp-details{
+    display: flex;
+}
+
+.experience{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;  
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 50vh ;
+}
+
+.exp{
+    margin-top: 5vh;
+    color: #1ABC9C;
+    text-decoration: underline;
+}
+.h-para{
+    color: #0a8d73;
+}
+.exp-cmp{
+    margin-right: 5vh;
+}
+.extlinks{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5vh;
+}
+
+.resume-hdr{
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+}
+
+.hd{
+    color: #0a8d73;
+    width: 63vh;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.work-def{
+    color: #0a8d73;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
