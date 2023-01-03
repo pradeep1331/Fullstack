@@ -1,0 +1,39 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+public class FlatFileValidator {
+
+    public static void main(String[] args) throws IOException {
+        // read and parse the flat file
+        FileReader fileReader = new FileReader("input.txt");
+        CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(fileReader);
+
+        // find the record that meets the specified condition
+        String targetValue = "value";
+        CSVRecord targetRecord = null;
+        for (CSVRecord record : parser) {
+            if (record.get(0).equals(targetValue)) {
+                targetRecord = record;
+                break;
+            }
+        }
+
+        // perform validation on the target record
+        if (targetRecord == null) {
+            System.out.println("Target record not found");
+        } else {
+            // validate specific values in the target record
+            if (!targetRecord.get(1).equals("expected value")) {
+                System.out.println("Unexpected value in column 2 of target record");
+            }
+            if (!targetRecord.get(2).equals("another expected value")) {
+                System.out.println("Unexpected value in column 3 of target record");
+            }
+        }
+    }
+}
