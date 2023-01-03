@@ -1,0 +1,36 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+public class WriteXLS {
+    public static void setCellValue(String fileName, int sheetNumber, int rowNumber, int cellNumber, String value) throws IOException {
+        // Open the XLS file
+        FileInputStream inputStream = new FileInputStream(fileName);
+        Workbook workbook = new HSSFWorkbook(inputStream);
+
+        // Get the specified sheet
+        Sheet sheet = workbook.getSheetAt(sheetNumber);
+
+        // Get the specified cell
+        Cell cell = sheet.getRow(rowNumber).getCell(cellNumber);
+
+        // Set the cell value
+        cell.setCellValue(value);
+
+        // Close the input stream
+        inputStream.close();
+
+        // Write the output to the file
+        FileOutputStream outputStream = new FileOutputStream(fileName);
+        workbook.write(outputStream);
+        outputStream.close();
+
+        // Close the workbook
+        workbook.close();
+    }
+}
