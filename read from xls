@@ -1,0 +1,29 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+public class ReadXLS {
+    public static String getCellValue(String fileName, int sheetNumber, int rowNumber, int cellNumber) throws IOException {
+        // Open the XLS file
+        FileInputStream inputStream = new FileInputStream(fileName);
+        Workbook workbook = new HSSFWorkbook(inputStream);
+
+        // Get the specified sheet
+        Sheet sheet = workbook.getSheetAt(sheetNumber);
+
+        // Get the specified cell
+        Cell cell = sheet.getRow(rowNumber).getCell(cellNumber);
+
+        // Get the cell value
+        String cellValue = cell.getStringCellValue();
+
+        // Close the workbook
+        workbook.close();
+
+        return cellValue;
+    }
+}
