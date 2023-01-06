@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FlatFileValidator {
+    public static void main(String[] args) throws IOException {
+        String fileName = "flat_file.txt";
+        int[] lengths = {3, 5, 4, 4, 2};
+        String condition = "even";
+
+        boolean isValid = validateFlatFile(fileName, lengths, condition);
+        System.out.println("Is valid: " + isValid);
+    }
+
+    public static boolean validateFlatFile(String fileName, int[] lengths, String condition) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            int startIndex = 0;
+            int endIndex = 0;
+            for (int length : lengths) {
+                endIndex += length;
+                String field = line.substring(startIndex, endIndex);
+                if (!field.matches("\\d+")) {
+                    return false;
+                }
+                int value = Integer.parseInt(field);
+                if (condition.equals("even") && value % 2 != 0) {
+                    return false;
+                } else if (condition.equals("odd") && value % 2 == 0) {
+                    return false;
+                }
+                startIndex = endIndex;
+            }
+        }
+        return true;
+    }
+} 
