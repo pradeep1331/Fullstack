@@ -1,0 +1,55 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FlatfileValidator {
+
+    public static void main(String[] args) {
+
+        String fileName = "path/to/your/flatfile.txt";
+        String line;
+        int lineNumber = 0;
+        String targetValue = "target value to find";
+        int numberOfLines = 2; // number of lines to obtain after the target line
+        String[] extractedLines = new String[numberOfLines];
+        String[] fields = new String[4];
+        boolean targetLineFound = false;
+        int extractedLinesCount = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+
+            while ((line = br.readLine()) != null) {
+                lineNumber++;
+
+                if (line.contains(targetValue) && !targetLineFound) {
+                    targetLineFound = true;
+                    // Split line into fields
+                    int[] fieldLengths = { 8, 5, 10, 15 };
+                    int start = 0;
+                    for (int i = 0; i < fieldLengths.length; i++) {
+                        int end = start + fieldLengths[i];
+                        fields[i] = line.substring(start, end);
+                        start = end;
+                    }
+                    // validate fields
+                    if (fields[0].length() != fieldLengths[0]) {
+                        System.out.println("Incorrect field length on line " + lineNumber + " for field 1: " + fields[0]);
+                    } else if (fields[1].length() != fieldLengths[1]) {
+                        System.out.println("Incorrect field length on line " + lineNumber + " for field 2: " + fields[1]);
+                    }
+                }
+                if (targetLineFound && extractedLinesCount < numberOfLines) {
+                    extractedLines[extractedLinesCount] = line;
+                    extractedLinesCount++;
+                }
+            }
+            //Printing extracted lines
+            for (String extractedLine : extractedLines) {
+                System.out.println(extractedLine);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
