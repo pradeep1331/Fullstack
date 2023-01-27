@@ -53,3 +53,6 @@ public class FlatfileValidator {
         }
     }
 }
+
+This program uses a BufferedReader to read through the flatfile line by line, and checks if each line contains the target value. Once the target line is found, the program splits the line into fields based on their length and validate each field using if conditions. Then, it extracts the number of lines specified by the variable 'numberOfLines' below the identified line and stores them in an array. Finally, it prints the extracted lines.
+The extracted lines are now stored in a separate array extractedLines and can be used for further processing
