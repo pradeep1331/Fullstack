@@ -1,58 +1,49 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FlatfileValidator {
+    public static void main(String[] args) throws IOException {
+        String fileName = "flatfile.txt";
+        String searchValue = "SpecificValue";
+        int lineLength = 10;
+        int linesBelow = 2;
+        Map<Integer, String> fileLines = new HashMap<>();
 
-    public static void main(String[] args) {
-
-        String fileName = "path/to/your/flatfile.txt";
+        // Read flatfile line by line and add to map
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line;
-        int lineNumber = 0;
-        String targetValue = "target value to find";
-        int numberOfLines = 2; // number of lines to obtain after the target line
-        String[] extractedLines = new String[numberOfLines];
-        String[] fields = new String[4];
-        boolean targetLineFound = false;
-        int extractedLinesCount = 0;
+        int lineCount = 0;
+        while ((line = br.readLine()) != null) {
+            fileLines.put(lineCount, line);
+            lineCount++;
+        }
+        br.close();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-
-            while ((line = br.readLine()) != null) {
-                lineNumber++;
-
-                if (line.contains(targetValue) && !targetLineFound) {
-                    targetLineFound = true;
-                    // Split line into fields
-                    int[] fieldLengths = { 8, 5, 10, 15 };
-                    int start = 0;
-                    for (int i = 0; i < fieldLengths.length; i++) {
-                        int end = start + fieldLengths[i];
-                        fields[i] = line.substring(start, end);
-                        start = end;
-                    }
-                    // validate fields
-                    if (fields[0].length() != fieldLengths[0]) {
-                        System.out.println("Incorrect field length on line " + lineNumber + " for field 1: " + fields[0]);
-                    } else if (fields[1].length() != fieldLengths[1]) {
-                        System.out.println("Incorrect field length on line " + lineNumber + " for field 2: " + fields[1]);
-                    }
-                }
-                if (targetLineFound && extractedLinesCount < numberOfLines) {
-                    extractedLines[extractedLinesCount] = line;
-                    extractedLinesCount++;
-                }
+        // Find specific line and separate into array
+        int specificLine = -1;
+        for (Map.Entry<Integer, String> entry : fileLines.entrySet()) {
+            if (entry.getValue().contains(searchValue)) {
+                specificLine = entry.getKey();
+                String[] separatedLine = entry.getValue().split("(?<=\\G.{" + lineLength + "})");
+                // Validate fields using if conditions
+                // ...
+                break;
             }
-            //Printing extracted lines
-            for (String extractedLine : extractedLines) {
-                System.out.println(extractedLine);
-            }
+        }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        // Isolate lines below specific line
+        if (specificLine != -1) {
+            String[] linesBelowArray = new String[linesBelow];
+            for (int i = 1; i <= linesBelow; i++) {
+                linesBelowArray[i-1] = fileLines.get(specificLine + i);
+                // Validate fields using if conditions
+                // ...
+            }
+        } else {
+            System.out.println("Specific line not found.");
         }
     }
 }
-
-This program uses a BufferedReader to read through the flatfile line by line, and checks if each line contains the target value. Once the target line is found, the program splits the line into fields based on their length and validate each field using if conditions. Then, it extracts the number of lines specified by the variable 'numberOfLines' below the identified line and stores them in an array. Finally, it prints the extracted lines.
-The extracted lines are now stored in a separate array extractedLines and can be used for further processing
