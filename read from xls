@@ -27,3 +27,45 @@ public class ReadXLS {
         return cellValue;
     }
 }
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+public class ReadXLS {
+   public static void main(String[] args) {
+      try {
+         FileInputStream file = new FileInputStream("file.xls");
+         Workbook workbook = new HSSFWorkbook(file);
+         Sheet sheet = workbook.getSheetAt(0);
+         Row row = sheet.getRow(0);
+         Cell cell = row.getCell(0);
+         String value = cell.getStringCellValue();
+         System.out.println(value);
+         file.close();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
+}
+
+
+
+<dependencies>
+   <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.2</version>
+   </dependency>
+   <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+   </dependency>
+</dependencies>
