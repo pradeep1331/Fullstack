@@ -47,3 +47,25 @@ public class FlatfileValidator {
         }
     }
 }
+
+
+public class StringValidator {
+    public static void main(String[] args) {
+        String input = "This is a sample string";
+        int[] indexes = {4, 10}; // start and end index to extract the substring
+        String compareString = "sample";
+
+        String extractedString = extractString(input, indexes);
+
+        // compare the extracted string with the specified string
+        if (extractedString.equals(compareString)) {
+            System.out.println("Match found!");
+        } else {
+            System.out.println("Match not found!");
+        }
+    }
+
+    private static String extractString(String input, int[] indexes) {
+        return input.substring(indexes[0], indexes[1]);
+    }
+}
