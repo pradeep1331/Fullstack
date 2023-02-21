@@ -1,0 +1,83 @@
+file validation methods
+
+public static List<String> splitAndValidateString(String input, List<Integer> indexes) {
+    List<String> substrings = new ArrayList<>();
+    int startIndex = 0;
+    for (int endIndex : indexes) {
+        String substring = input.substring(startIndex, endIndex);
+        if (substring.length() < 5 || substring.length() > 10) {
+            throw new IllegalArgumentException("Substring " + substring + " does not meet length requirements");
+        }
+        if (!substring.matches("[A-Za-z]+")) {
+            throw new IllegalArgumentException("Substring " + substring + " contains invalid characters");
+        }
+        substrings.add(substring);
+        startIndex = endIndex;
+    }
+    substrings.add(input.substring(startIndex)); // add remaining substring
+    return substrings;
+}
+
+regex : 
+String pattern = "^[0-9]+$";
+
+String pattern = "^[a-zA-Z0-9]+$";
+
+String pattern = "^[a-zA-Z]+$";
+
+String input = "abc123";
+if (input.matches("^[a-zA-Z0-9]+$")) {
+    System.out.println("The string contains only alphanumeric characters");
+} else {
+    System.out.println("The string contains other characters");
+}
+
+RestAssured.config = RestAssured.newConfig().sslConfig(new SSLConfig("C:\\Users\\userName\\clientcert.jks","Password");
+
+  Response resp = given().
+            param("reportId", "111").
+            param("startDate","2020-01-01").
+            param("endDate", " 2020-01-01").
+            when().get(path);
+  resp.prettyPrint();
+  
+  
+  String input = "Hello, World!";
+if (input.matches("[^a-zA-Z0-9]")) {
+    System.out.println("The string contains special characters");
+} else {
+    System.out.println("The string does not contain any special characters");
+}
+
+
+Here are some possible solutions to resolve this issue:
+
+Import the server's SSL certificate into your Java trust store
+You can import the SSL certificate of the server you are trying to connect to into your Java trust store. This will tell Java to trust the certificate and allow you to connect to the server.
+
+To import the certificate, you can use the following command:
+
+bash
+Copy code
+keytool -import -alias mycert -keystore cacerts -file /path/to/certfile.crt
+This command will import the SSL certificate from the file /path/to/certfile.crt into the Java trust store cacerts and assign it the alias mycert. You may need to provide the password for the trust store, which is usually changeit.
+
+Once you have imported the certificate, try running your REST Assured request again.
+
+Disable SSL certificate validation
+While it is not recommended to disable SSL certificate validation, it may be a temporary solution to get your REST Assured request to work. You can disable SSL certificate validation by setting the relaxedHTTPSValidation property to true in your REST Assured configuration. This will allow REST Assured to bypass SSL certificate validation and connect to the server.
+
+Here is an example of how to disable SSL certificate validation in REST Assured:
+
+java
+Copy code
+RestAssured.config = RestAssured.config().sslConfig(new SSLConfig().relaxedHTTPSValidation());
+Again, this is not a recommended solution, as it can leave your application vulnerable to security risks.
+
+Update your Java installation
+If your Java installation is outdated, it may not have the latest root certificates required to validate SSL certificates. Updating your Java installation may resolve the issue.
+
+Check the SSL certificate on the server
+If you are the owner of the server you are trying to connect to, you should check the SSL certificate to ensure that it is valid and trusted by Java. If the certificate is self-signed, you should consider obtaining a trusted SSL certificate from a Certificate Authority (CA).
+
+If you are not the owner of the server, you should contact the server administrator and report the issue.
