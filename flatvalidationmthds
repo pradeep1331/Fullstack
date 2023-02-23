@@ -81,3 +81,17 @@ Check the SSL certificate on the server
 If you are the owner of the server you are trying to connect to, you should check the SSL certificate to ensure that it is valid and trusted by Java. If the certificate is self-signed, you should consider obtaining a trusted SSL certificate from a Certificate Authority (CA).
 
 If you are not the owner of the server, you should contact the server administrator and report the issue.
+
+
+ public static void appendToFile(String filename, String data) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+            writer.write(data);
+            writer.newLine();
+            writer.close();
+            System.out.println("Data appended to " + filename + " successfully!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while appending data to " + filename);
+            e.printStackTrace();
+        }
+    }
