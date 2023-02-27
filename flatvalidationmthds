@@ -120,3 +120,54 @@ public class FileParser {
         return map;
     }
 }
+
+
+<dependencies>
+    <!-- Karate core -->
+    <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-core</artifactId>
+        <version>${karate.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Karate JUnit runner -->
+    <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-junit4</artifactId>
+        <version>${karate.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Karate Gatling integration (optional) -->
+    <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-gatling</artifactId>
+        <version>${karate.version}</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- For JSONPath expressions -->
+    <dependency>
+        <groupId>com.jayway.jsonpath</groupId>
+        <artifactId>json-path</artifactId>
+        <version>2.4.0</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- For XML parsing and querying -->
+    <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>1.14.1</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- For Excel reading and writing -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>4.1.2</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
