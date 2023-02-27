@@ -95,3 +95,28 @@ If you are not the owner of the server, you should contact the server administra
             e.printStackTrace();
         }
     }
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class FileParser {
+    public static Map<String, String> parseFile(String filePath) throws IOException {
+        Map<String, String> map = new HashMap<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] pairs = line.split(",");
+                for (String pair : pairs) {
+                    String[] keyValue = pair.split(":");
+                    String key = keyValue[0].replaceAll("\"", "").trim();
+                    String value = keyValue[1].replaceAll("\"", "").trim();
+                    map.put(key, value);
+                }
+            }
+        }
+        return map;
+    }
+}
