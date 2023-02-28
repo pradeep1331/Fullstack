@@ -69,3 +69,59 @@ public class ReadXLS {
       <version>4.1.2</version>
    </dependency>
 </dependencies>
+
+
+<dependencies>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml-schemas</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+</dependencies>
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelReader {
+    
+    public void readExcelFile(String filePath) throws IOException {
+        // Open the Excel file
+        FileInputStream file = new FileInputStream(new File(filePath));
+
+        // Create a workbook object
+        XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+        // Get the first sheet in the workbook
+        XSSFSheet sheet = workbook.getSheetAt(0);
+
+        // Iterate through each row in the sheet
+        for (Row row : sheet) {
+            // Iterate through each cell in the row
+            for (Cell cell : row) {
+                // Get the value of the cell
+                String cellValue = cell.getStringCellValue();
+                // Do something with the cell value (e.g. print it)
+                System.out.print(cellValue + "\t");
+            }
+            System.out.println();
+        }
+
+        // Close the file
+        file.close();
+    }
+}
+
