@@ -1,0 +1,185 @@
+datatables
+
+package com.example.stepdefinitions;
+
+import io.cucumber.java.DataTableType;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.But;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import io.cucumber.java.After;
+
+public class LoginSteps {
+
+    private WebDriver driver;
+    private static List<Map<String, String>> records;
+
+    public static void setRecords() {
+        records = new ArrayList<>();
+
+        // Add records to the list
+        Map<String, String> record1 = new HashMap<>();
+        record1.put("username", "user1");
+        record1.put("password", "password1");
+        records.add(record1);
+
+        Map<String, String> record2 = new HashMap<>();
+        record2.put("username", "user2");
+        record2.put("password", "password2");
+        records.add(record2);
+
+        Map<String, String> record3 = new HashMap<>();
+        record3.put("username", "user3");
+        record3.put("password", "password3");
+        records.add(record3);
+
+        // Add more records as needed
+    }
+
+    @Given("I am on the login page")
+    public void navigateToLoginPage() {
+        // Set up Selenium WebDriver and navigate to the login page
+        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        // driver = new ChromeDriver();
+        // driver.get("https://example.com/login");
+        setRecords();
+    }
+
+    @When("I enter the following username and password:")
+    public void enterUsernameAndPassword(Map<String, String> credentials) {
+        String username = credentials.get("username");
+        String password = credentials.get("password");
+
+        // Enter the username and password in the corresponding fields
+        System.out.println(username);
+        System.out.println(password);
+    }
+
+    @Then("I should be logged in successfully")
+    public void verifyLoginSuccessful() {
+        System.out.println("Verify step");
+    }
+
+    @After
+    public void tearDown() {
+        // Quit the WebDriver instance after each scenario
+        driver.quit();
+    }
+
+    @DataTableType
+    public Map<String, String> recordEntry(List<String> record) {
+        // Assuming the first column of the record represents the username and the second column represents the password
+        return Map.of("username", record.get(0), "password", record.get(1));
+    }
+
+    // Set the records in the static variable
+    public static void setRecords(List<Map<String, String>> records) {
+        LoginSteps.records = records;
+    }
+}
+
+Feature: Login
+  Scenario Outline: User Login
+    Given I am on the login page
+    When I enter the following username and password:
+    Then I should be logged in successfully
+
+    Examples:
+      |      |      |
+      
+      <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>cucumber-selenium-framework</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <cucumber.version>7.2.1</cucumber.version>
+    </properties>
+
+    <dependencies>
+        <!-- Cucumber Dependencies -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- Selenium WebDriver Dependencies -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <executions>
+                    <execution>
+                        <id>cucumber-tests</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>**/TestRunner.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
